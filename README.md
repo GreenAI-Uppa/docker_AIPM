@@ -1,15 +1,15 @@
-# AIPM_docker
+# docker_AIPM
 Install and use AIPowerMeter (https://github.com/GreenAI-Uppa/AIPowerMeter) throughout a docker container
 
 ## Requirements
 RAPL and/or nvidia-smi available
 
-Docker
+A working Docker installation
 
 ## Build
 
 ```
-sudo docker build -t aipm_test_01:latest .
+sudo docker build -t IMAGE_NAME:TAG .
 ```
 
 ## Run
@@ -24,4 +24,7 @@ sudo docker run --gpus all -it --rm --mount type=bind,src=/path/to/docker_repo,d
 
 Open the PowerConsumption.ipynb and change the path to the docker repository
 
-You can use docker-env/bin/python as a kernel for the notebook with all requirements needed
+All the requirements you need for the notebook and the alexnet model are in the requirements.txt file, you can easily add it to your virtual env with
+```
+pip install -r requirements.txt
+```
